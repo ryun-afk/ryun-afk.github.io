@@ -1,4 +1,4 @@
-#ryun-afk.github.io
+of #ryun-afk.github.io
 
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
   <body>
     <header id="top">
       <h1>The Odin Project Notes</h1>
-      "theodinproject.com" as the primary learning platform for full-stack web development. 
+      <p>"theodinproject.com" as the primary learning platform for full-stack web development. </p>
       <!-- <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." /> -->
     </header>
     <main>
@@ -60,7 +60,7 @@
       </section>
     </main>
     <footer>
-      <p>I can code!</p>
+      <p>End of HTML notes</p>
     </footer>
     <script src="./assets/script.js"></script>
   </body>
