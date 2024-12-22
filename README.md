@@ -10,20 +10,19 @@ HTML notes:
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Prework Study Guide</title>
+    <title>Ryan Ngu's Portfolio</title>
   </head>
   <body>
     <header id="top">
-      <h1>Prework Study Guide</h1>
-      <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." />
-      <h2>✨ Open the Console to See What's Happening ✨</h2>
+      <h1>The Odin Project Notes</h1>
+      <!--<img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." />
+      -->
     </header>
     <main>
       <!-- Student code goes here -->
       <section class="card" id="html-section">
         <h2>HTML</h2>
         <ul>
-          <li>Enter your HTML notes here</li>
           <li>The head element contains information about the webpage.</li>
           <li>The body element represents the visible content shown to the user.</li>
           <li>The head element contains the metadata, that helps the browser render the page correctly. </li>
