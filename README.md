@@ -1,7 +1,5 @@
 #ryun-afk.github.io
 
-Utilized "theodinproject.com" as the primary learning platform for web development. 
-HTML notes:
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +13,7 @@ HTML notes:
   <body>
     <header id="top">
       <h1>The Odin Project Notes</h1>
+      "theodinproject.com" as the primary learning platform for full-stack web development. 
       <!-- <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." /> -->
     </header>
     <main>
