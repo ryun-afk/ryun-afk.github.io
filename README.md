@@ -15,11 +15,9 @@ HTML notes:
   <body>
     <header id="top">
       <h1>The Odin Project Notes</h1>
-      <!--<img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." />
-      -->
+      <!-- <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." /> -->
     </header>
     <main>
-      <!-- Student code goes here -->
       <section class="card" id="html-section">
         <h2>HTML</h2>
         <ul>
@@ -29,11 +27,9 @@ HTML notes:
           <li>Elements within the header are not visible when a user looks at a webpage. </li>
         </ul>
       </section>
-   
       <section class="card" id="css-section">
         <h2>CSS</h2>
         <ul>
-          <li>Enter your CSS notes here</li>
           <li>A margin indicates how much space we want around the outside of an element.</li>
           <li>A padding indicates how much space we want around the content inside an element.</li>
           <li>Look at style.css as reference</li>
@@ -43,11 +39,9 @@ HTML notes:
           <li>Class attribute "card" was created in style.css by creating ".card"</li>
         </ul>
       </section>
-   
       <section class="card" id="git-section">
         <h2>Git</h2>
         <ul>
-          <li>Enter your Git notes here</li>
           <li>git status: checks what branch we are currently on</li>
           <li>git checkout -b branch-name: creates a new branch and switches to it</li>
           <li>git add -A: adds modifications in the current working branch</li>
@@ -56,11 +50,9 @@ HTML notes:
           <li>git push origin feature/starter-code: push changes we have locally to our remote GitHub branch. </li>
         </ul>
       </section>
-   
       <section class="card" id="javascript-section">
         <h2>JavaScript</h2>
         <ul>
-          <li>Enter your JavaScript notes here</li>
           <li>touch  script.js: create js file in current directory</li>
           <li>Linking js is near the bottom of index.html between footer and closing body. </li>
           <li>Declaring functions: function helloWorld(){\\code block here}</li>
@@ -68,7 +60,6 @@ HTML notes:
         </ul>
       </section>
     </main>
-
     <footer>
       <p>I can code!</p>
     </footer>
