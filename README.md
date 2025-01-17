@@ -1,6 +1,6 @@
-🏫Studied at California State Polytechnic University, Pomona (Cal Poly Pomona) in May 2023.
+🏫Studied at California State Polytechnic University, Pomona (Cal Poly Pomona).
 
-📘Graduted with a Bachelor of Science in Pure Mathematics. 
+🎓Graduated with a B.S. in Mathematics 23'
 
 📜Created scripts, templates, and pipelines for data processing and analysis. 
 
