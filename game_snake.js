@@ -8,7 +8,7 @@ let snake_trail = [];
 let snake_x, snake_y;
 let snake_dx, snake_dy;
 let apple_x, apple_y;
-let snake_tail;
+let snake_length;
 
 let tile_size = 20;
 let grid_dimension =20;
@@ -34,7 +34,7 @@ function gameReset() {
     snake_dy = 0;
     apple_x = Math.floor(Math.random() * canvas.width / tile_size);
     apple_y = Math.floor(Math.random() * canvas.height / tile_size);
-    snake_tail = 5;
+    snake_length = 5;
 
     score_span.innerHTML = 0;
 }
@@ -80,11 +80,18 @@ function game() {
 
 
 function checkSnake(){
+    //snake out of bound
     if (snake_x < 0 || snake_y < 0 || snake_x > grid_dimension-1 || snake_y > grid_dimension-1){
         gameReset();
     }
-    //add function to check if snake ate itself
 
+    //snake biting itself
+    for (var i = 1; i < snake_trail.length -1;i++){
+        if(snake_dx==0 && snake_dy==0){break;}
+        if(snake_trail[i].x==snake_x && snake_trail[i].y == snake_y){
+            gameReset();
+        }
+    }
 }
 
 function drawBackground() {
@@ -109,7 +116,7 @@ function drawSnake() {
         y: snake_y
     });
 
-    while (snake_trail.length > snake_tail) {
+    while (snake_trail.length > snake_length) {
         snake_trail.shift();
     }
 }
@@ -117,7 +124,7 @@ function drawSnake() {
 function drawApple() {
     if (apple_x == snake_x && apple_y == snake_y) {
         score_span.innerHTML++;
-        snake_tail++;
+        snake_length++;
         apple_x = Math.floor(Math.random() * grid_dimension);
         apple_y = Math.floor(Math.random() * grid_dimension);
     }
