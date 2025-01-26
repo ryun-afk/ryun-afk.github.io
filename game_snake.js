@@ -40,23 +40,30 @@ function gameReset() {
 }
 
 function keyPush(event) {
-    
     switch (event.keyCode) {
         case 37:
-            snake_dx = -1;
-            snake_dy = 0;
+            if (snake_dx != 1){
+                snake_dx = -1;
+                snake_dy = 0;
+            }
             break;
         case 38:
-            snake_dx = 0;
-            snake_dy = -1;
+            if (snake_dy != 1){
+                snake_dx = 0;
+                snake_dy = -1;
+            }
             break;
         case 39:
-            snake_dx = 1;
-            snake_dy = 0;
+            if (snake_dx != -1){
+                snake_dx = 1;
+                snake_dy = 0;
+            }
             break;
         case 40:
-            snake_dx = 0;
-            snake_dy = 1;
+            if (snake_dy != -1){
+                snake_dx = 0;
+                snake_dy = 1;
+            }
             break;
     }
 }
@@ -76,7 +83,7 @@ function checkSnake(){
     if (snake_x < 0 || snake_y < 0 || snake_x > grid_dimension-1 || snake_y > grid_dimension-1){
         gameReset();
     }
-
+    //add function to check if snake ate itself
 
 }
 
