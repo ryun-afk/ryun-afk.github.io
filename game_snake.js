@@ -8,25 +8,26 @@ let snake_trail = [];
 let snake_x, snake_y;
 let snake_dx, snake_dy;
 let apple_x, apple_y;
-let snake_length;
+let snake_initial_length;
 
 let tile_size = 20;
 let grid_dimension =20;
+canvas.width = grid_dimension * tile_size;
+canvas.height = grid_dimension * tile_size;
 
 window.onload = function () {
+    highscore = 0;
+
     gameReset();
     document.addEventListener("keydown", keyPush);
     setInterval(game, 1000 / 15);
-
-    canvas.width = grid_dimension * tile_size;
-    canvas.height = grid_dimension * tile_size;
-    highscore_span.innerHTML = 0;
 }
 
 function gameReset() {
-    if (score_span.innerHTML > highscore_span.innerHTML) {
-        highscore_span.innerHTML = score_span.innerHTML;
-    }
+    if (score > highscore) {highscore = score;}
+    score = 0;
+    score_span.innerHTML = 0;
+    highscore_span.innerHTML = highscore;
 
     snake_x = Math.floor(Math.random() * canvas.width / tile_size);
     snake_y = Math.floor(Math.random() * canvas.height / tile_size);
@@ -34,9 +35,7 @@ function gameReset() {
     snake_dy = 0;
     apple_x = Math.floor(Math.random() * canvas.width / tile_size);
     apple_y = Math.floor(Math.random() * canvas.height / tile_size);
-    snake_length = 5;
-
-    score_span.innerHTML = 0;
+    snake_initial_length = 5;
 }
 
 function keyPush(event) {
@@ -85,12 +84,20 @@ function checkSnake(){
         gameReset();
     }
 
-    //snake biting itself
+    //snake eats itself
     for (var i = 1; i < snake_trail.length -1;i++){
         if(snake_dx==0 && snake_dy==0){break;}
         if(snake_trail[i].x==snake_x && snake_trail[i].y == snake_y){
             gameReset();
         }
+    }
+
+    //snake eats apple
+    if (apple_x == snake_x && apple_y == snake_y) {
+        score++;
+        score_span.innerHTML = score;
+        apple_x = Math.floor(Math.random() * grid_dimension);
+        apple_y = Math.floor(Math.random() * grid_dimension);
     }
 }
 
@@ -102,7 +109,7 @@ function drawBackground() {
 
 function drawSnake() {
     c.fillStyle = "lime";
-    for (var i = 0; i < snake_trail.length - 1; i++) {
+    for (var i = 0; i < snake_trail.length; i++) {
         c.fillRect(
             snake_trail[i].x * tile_size,
             snake_trail[i].y * tile_size,
@@ -111,23 +118,13 @@ function drawSnake() {
         );
     }
 
-    snake_trail.push({
-        x: snake_x,
-        y: snake_y
-    });
-
-    while (snake_trail.length > snake_length) {
+    snake_trail.push({x: snake_x,y: snake_y});
+    while (snake_trail.length > snake_initial_length + score) {
         snake_trail.shift();
     }
 }
 
 function drawApple() {
-    if (apple_x == snake_x && apple_y == snake_y) {
-        score_span.innerHTML++;
-        snake_length++;
-        apple_x = Math.floor(Math.random() * grid_dimension);
-        apple_y = Math.floor(Math.random() * grid_dimension);
-    }
     c.fillStyle = "red";
     c.fillRect(
         apple_x * tile_size,
