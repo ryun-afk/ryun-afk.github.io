@@ -8,7 +8,7 @@ let snake_trail = [];
 let snake_x, snake_y;
 let snake_dx, snake_dy;
 let apple_x, apple_y;
-let snake_initial_length;
+let initial_length;
 
 let tile_size = 20;
 let grid_dimension =20;
@@ -35,7 +35,7 @@ function gameReset() {
     snake_dy = 0;
     apple_x = Math.floor(Math.random() * canvas.width / tile_size);
     apple_y = Math.floor(Math.random() * canvas.height / tile_size);
-    snake_initial_length = 5;
+    initial_length = 5;
 }
 
 function keyPush(event) {
@@ -68,6 +68,8 @@ function keyPush(event) {
 }
 
 function game() {
+    width = 100
+
     snake_x += snake_dx;
     snake_y += snake_dy;
     
@@ -76,7 +78,6 @@ function game() {
     drawSnake();
     drawApple();
 }
-
 
 function checkSnake(){
     //snake out of bound
@@ -119,7 +120,7 @@ function drawSnake() {
     }
 
     snake_trail.push({x: snake_x,y: snake_y});
-    while (snake_trail.length > snake_initial_length + score) {
+    while (snake_trail.length > initial_length + score) {
         snake_trail.shift();
     }
 }
@@ -132,4 +133,4 @@ function drawApple() {
         tile_size - 2,
         tile_size - 2
     );
-};
+}
