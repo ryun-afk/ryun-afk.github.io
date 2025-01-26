@@ -73,7 +73,7 @@ function game() {
 
 
 function checkSnake(){
-    if (snake_x < 0 || snake_y < 0 || snake_x > grid_dimension || snake_y > grid_dimension){
+    if (snake_x < 0 || snake_y < 0 || snake_x > grid_dimension-1 || snake_y > grid_dimension-1){
         gameReset();
     }
 
