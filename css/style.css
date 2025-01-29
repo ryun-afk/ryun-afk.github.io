@@ -5,8 +5,8 @@ head {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #141414;
-    color: #fff;
+    background: #fff;
+    color: #141414;
     cursor: default;
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
     -webkit-user-select: none;
@@ -80,7 +80,7 @@ a .content {
     padding: 1rem;
     border-radius: 8px;
     height: 170px;
-    width: 300px;
+    
     flex-wrap: wrap;
 }
 
